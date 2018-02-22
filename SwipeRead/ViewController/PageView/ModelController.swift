@@ -22,12 +22,6 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
     
     override init() {
         super.init()
-        initPageData()
-    }
-    
-    private func initPageData() {
-        RSSModel.shared.terms = ["1", "2", "3"]
-        RSSModel.shared.explanations = ["1", "2", "3"]
     }
     
     func viewControllerAtIndex(_ index: Int, storyboard: UIStoryboard) -> DataViewController? {

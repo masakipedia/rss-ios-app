@@ -18,6 +18,10 @@
 		AAA3738A203ED70C00D5605A /* DataViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAA37388203ED70C00D5605A /* DataViewController.xib */; };
 		AAA3738C203ED98400D5605A /* RSSModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA3738B203ED98400D5605A /* RSSModel.swift */; };
 		AAA3738E203ED99C00D5605A /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA3738D203ED99C00D5605A /* ModelController.swift */; };
+		AAA37391203EF68100D5605A /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA3738F203EF68100D5605A /* ListViewController.swift */; };
+		AAA3739C203F075C00D5605A /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAA3739A203F075C00D5605A /* ListViewController.xib */; };
+		AAA373A3203F092F00D5605A /* ListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA373A1203F092F00D5605A /* ListViewCell.swift */; };
+		AAA373A4203F092F00D5605A /* ListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAA373A2203F092F00D5605A /* ListViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +38,10 @@
 		AAA37388203ED70C00D5605A /* DataViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DataViewController.xib; sourceTree = "<group>"; };
 		AAA3738B203ED98400D5605A /* RSSModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSModel.swift; sourceTree = "<group>"; };
 		AAA3738D203ED99C00D5605A /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
+		AAA3738F203EF68100D5605A /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		AAA3739A203F075C00D5605A /* ListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListViewController.xib; sourceTree = "<group>"; };
+		AAA373A1203F092F00D5605A /* ListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewCell.swift; sourceTree = "<group>"; };
+		AAA373A2203F092F00D5605A /* ListViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +89,7 @@
 		AAA3737A203ED52B00D5605A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AAA37394203EF69400D5605A /* TableView */,
 				AAA37384203ED68300D5605A /* PageView */,
 			);
 			path = View;
@@ -89,6 +98,7 @@
 		AAA3737B203ED53400D5605A /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				AAA37393203EF68600D5605A /* TableView */,
 				AAA37383203ED67400D5605A /* PageView */,
 			);
 			path = ViewController;
@@ -136,6 +146,24 @@
 				AAA37388203ED70C00D5605A /* DataViewController.xib */,
 			);
 			path = PageView;
+			sourceTree = "<group>";
+		};
+		AAA37393203EF68600D5605A /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				AAA373A1203F092F00D5605A /* ListViewCell.swift */,
+				AAA3738F203EF68100D5605A /* ListViewController.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		AAA37394203EF69400D5605A /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				AAA3739A203F075C00D5605A /* ListViewController.xib */,
+				AAA373A2203F092F00D5605A /* ListViewCell.xib */,
+			);
+			path = TableView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,8 +225,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAA373A4203F092F00D5605A /* ListViewCell.xib in Resources */,
 				AAA37373203ED50800D5605A /* LaunchScreen.storyboard in Resources */,
 				AAA3738A203ED70C00D5605A /* DataViewController.xib in Resources */,
+				AAA3739C203F075C00D5605A /* ListViewController.xib in Resources */,
 				AAA37370203ED50800D5605A /* Assets.xcassets in Resources */,
 				AAA37382203ED66700D5605A /* RootViewController.xib in Resources */,
 				AAA3736B203ED50800D5605A /* Main.storyboard in Resources */,
@@ -216,8 +246,10 @@
 				AAA3736E203ED50800D5605A /* SwipeRead.xcdatamodeld in Sources */,
 				AAA3738E203ED99C00D5605A /* ModelController.swift in Sources */,
 				AAA37366203ED50800D5605A /* AppDelegate.swift in Sources */,
+				AAA373A3203F092F00D5605A /* ListViewCell.swift in Sources */,
 				AAA3738C203ED98400D5605A /* RSSModel.swift in Sources */,
 				AAA37381203ED66700D5605A /* RootViewController.swift in Sources */,
+				AAA37391203EF68100D5605A /* ListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

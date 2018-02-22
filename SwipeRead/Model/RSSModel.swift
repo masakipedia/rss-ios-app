@@ -11,11 +11,12 @@ class RSSModel {
     // singleton
     static var shared = RSSModel()
     
-    var terms: [String] = []
-    var explanations: [String] = []
+    var terms: [String] = ["111", "222", "333"]
+    var explanations: [String] = ["aaa", "bbb", "ccc"]
     
     func dataCount() -> Int {
         return terms.count
     }
+
 }
 
