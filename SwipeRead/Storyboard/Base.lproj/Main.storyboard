@@ -14,6 +14,9 @@
             <objects>
                 <viewController id="YsE-13-YAE" customClass="FeedTableViewController" customModule="SwipeRead" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="al4-2n-UyV"/>
+                    <connections>
+                        <segue destination="KZS-3J-jZJ" kind="push" identifier="showDetailFeed" id="af6-y6-Kv8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b1t-N8-ZPG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -22,10 +25,12 @@
         <!--Root View Controller-->
         <scene sceneID="EIS-6L-KWH">
             <objects>
-                <viewController id="KZS-3J-jZJ" customClass="RootViewController" customModule="SwipeRead" customModuleProvider="target" sceneMemberID="viewController"/>
+                <viewController storyboardIdentifier="RootViewController" id="KZS-3J-jZJ" customClass="RootViewController" customModule="SwipeRead" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="QtU-E9-9ZO"/>
+                </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dZK-3y-NIO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="16.800000000000001" y="-254.12293853073464"/>
+            <point key="canvasLocation" x="4" y="-254"/>
         </scene>
         <!--Data View Controller-->
         <scene sceneID="sfv-yo-tuv">

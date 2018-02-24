@@ -69,15 +69,9 @@ extension FeedTableViewController {
 
 extension FeedTableViewController {
     
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        guard let layout = TableViewLayout(indexPath: indexPath) else { fatalError() }
-//        switch layout {
-//        case .title:        self.showDetailViewControllerWithText(self.feed?.title ?? "[no title]")
-//        case .link:         self.showDetailViewControllerWithText(self.feed?.link ?? "[no link]")
-//        case .description:  self.showDetailViewControllerWithText(self.feed?.description ?? "[no link]")
-//        case .items:        self.showDetailViewControllerWithText(self.feed?.items?[indexPath.row].description ?? "[no description]")
-//        }
-//    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        showDetailViewControllerWithText(indexPath.row)
+    }
     
 }
 
@@ -86,10 +80,9 @@ extension FeedTableViewController {
 
 extension FeedTableViewController {
     
-//    func showDetailViewControllerWithText(_ text: String) {
-//        let viewController = FeedDetailTableViewController(text: text)
-//        self.show(viewController, sender: self)
-//    }
+    func showDetailViewControllerWithText(_ index: Int) {
+        performSegue(withIdentifier: "showDetailFeed", sender: nil)
+    }
     
 }
 
