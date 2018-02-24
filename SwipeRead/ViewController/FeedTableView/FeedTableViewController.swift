@@ -29,10 +29,10 @@ class FeedTableViewController: UITableViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        // セルのないところに線をなくす
+        // Eliminate the line where there is no cell
         tableView.tableFooterView = UIView()
         
-        // header view
+        // Add header view
         let headerHight = self.view.frame.height * 0.15
         tableView.contentInset.top = headerHight
         headerView = UIView(frame: CGRect(x: 0, y: -(self.view.safeAreaInsets.top + tableView.contentInset.top), width: self.view.frame.width, height: headerHight))
@@ -40,6 +40,12 @@ class FeedTableViewController: UITableViewController {
         tableView.addSubview(headerView)
     }
     
+}
+
+
+// MARK: - Table View Data Source
+
+extension FeedTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return RSSModel.shared.dataCount()
     }
@@ -50,11 +56,7 @@ class FeedTableViewController: UITableViewController {
         cell.term.text = RSSModel.shared.terms[indexPath.row]
         return cell
     }
-    
-
 }
-
-// MARK: - Table View Delegate
 
 
 // MARK: - Fix header view when scrolling
@@ -73,11 +75,3 @@ extension FeedTableViewController {
 }
 
 
-// MARK: - Memory warning
-
-extension FeedTableViewController {
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-}
