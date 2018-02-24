@@ -14,8 +14,8 @@ class FeedTableViewController: UITableViewController {
     
     override func loadView() {
         // load xib file
-        if let view = UINib(nibName: "FeedTableViewController", bundle: nil).instantiate(withOwner: self, options: nil).first as? UIView {
-            self.view = view
+        if let tableView = UINib(nibName: "FeedTableViewController", bundle: nil).instantiate(withOwner: self, options: nil).first as? UITableView {
+            self.tableView = tableView
         }
     }
     
