@@ -70,7 +70,7 @@ extension FeedTableViewController {
 extension FeedTableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        showDetailViewControllerWithText(indexPath.row)
+        pushFeedDetailWithIndex(indexPath.row)
     }
     
 }
@@ -80,10 +80,14 @@ extension FeedTableViewController {
 
 extension FeedTableViewController {
     
-    func showDetailViewControllerWithText(_ index: Int) {
-        performSegue(withIdentifier: "showDetailFeed", sender: nil)
+    func pushFeedDetailWithIndex(_ index: Int) {
+        performSegue(withIdentifier: "showFeedDetail", sender: index)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let rvc = (segue.destination as? RootViewController)!
+        rvc.initIndex = sender as! Int
+    }
 }
 
 
