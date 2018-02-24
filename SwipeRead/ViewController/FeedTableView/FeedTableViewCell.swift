@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ListViewCell: UITableViewCell {
+class FeedTableViewCell: UITableViewCell {
 
     @IBOutlet weak var term: UILabel!
     
