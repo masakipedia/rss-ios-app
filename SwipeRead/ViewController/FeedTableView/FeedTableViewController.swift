@@ -27,19 +27,17 @@ class FeedTableViewController: UITableViewController {
         super.viewDidLoad()
         
         initTableView()
-        
+        initHeaderView()
         RSSFeedModel.shared.loadRssFeed(tableView: self.tableView)
-       
     }
     
-    func initTableView() {
-        tableView.delegate = self
-        tableView.dataSource = self
-        
+    private func initTableView() {
         // Eliminate the line where there is no cell
         tableView.tableFooterView = UIView()
-        
-        // Add header view
+    }
+    
+    // Add header view
+    private func initHeaderView() {
         let headerHight = self.view.frame.height * 0.15
         let headerWidth = self.view.frame.width
         tableView.contentInset.top = headerHight
@@ -64,6 +62,35 @@ extension FeedTableViewController {
         cell.title.text = RSSFeedModel.shared.feed?.items?[indexPath.row].title ?? "[no title]"
         return cell
     }
+}
+
+
+// MARK: - Table View Delegate
+
+extension FeedTableViewController {
+    
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        guard let layout = TableViewLayout(indexPath: indexPath) else { fatalError() }
+//        switch layout {
+//        case .title:        self.showDetailViewControllerWithText(self.feed?.title ?? "[no title]")
+//        case .link:         self.showDetailViewControllerWithText(self.feed?.link ?? "[no link]")
+//        case .description:  self.showDetailViewControllerWithText(self.feed?.description ?? "[no link]")
+//        case .items:        self.showDetailViewControllerWithText(self.feed?.items?[indexPath.row].description ?? "[no description]")
+//        }
+//    }
+    
+}
+
+
+// MARK: - Navigation
+
+extension FeedTableViewController {
+    
+//    func showDetailViewControllerWithText(_ text: String) {
+//        let viewController = FeedDetailTableViewController(text: text)
+//        self.show(viewController, sender: self)
+//    }
+    
 }
 
 

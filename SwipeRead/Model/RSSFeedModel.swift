@@ -24,6 +24,10 @@ class RSSFeedModel {
         return feed?.items?.count ?? 0
     }
     
+    
+    /// Load RSS feed and display it in tableview
+    ///
+    /// - Parameter tableView: display tableview
     func loadRssFeed(tableView: UITableView) {
         let parser = FeedParser(URL: url)!
     
