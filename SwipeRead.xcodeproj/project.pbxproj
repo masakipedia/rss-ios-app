@@ -20,8 +20,8 @@
 		AAA3738E203ED99C00D5605A /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA3738D203ED99C00D5605A /* ModelController.swift */; };
 		AAA37391203EF68100D5605A /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA3738F203EF68100D5605A /* FeedTableViewController.swift */; };
 		AAA3739C203F075C00D5605A /* FeedTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAA3739A203F075C00D5605A /* FeedTableViewController.xib */; };
-		AAA373A3203F092F00D5605A /* ListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA373A1203F092F00D5605A /* ListViewCell.swift */; };
-		AAA373A4203F092F00D5605A /* ListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAA373A2203F092F00D5605A /* ListViewCell.xib */; };
+		AAA373A3203F092F00D5605A /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA373A1203F092F00D5605A /* FeedTableViewCell.swift */; };
+		AAA373A4203F092F00D5605A /* FeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAA373A2203F092F00D5605A /* FeedTableViewCell.xib */; };
 		BC7375A3867159C1281E5C60 /* Pods_SwipeRead.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDCD419642139AE43B442DF7 /* Pods_SwipeRead.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,8 +41,8 @@
 		AAA3738D203ED99C00D5605A /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
 		AAA3738F203EF68100D5605A /* FeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
 		AAA3739A203F075C00D5605A /* FeedTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedTableViewController.xib; sourceTree = "<group>"; };
-		AAA373A1203F092F00D5605A /* ListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewCell.swift; sourceTree = "<group>"; };
-		AAA373A2203F092F00D5605A /* ListViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListViewCell.xib; sourceTree = "<group>"; };
+		AAA373A1203F092F00D5605A /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
+		AAA373A2203F092F00D5605A /* FeedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedTableViewCell.xib; sourceTree = "<group>"; };
 		B88ABFD30FC601438C45A87D /* Pods-SwipeRead.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwipeRead.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwipeRead/Pods-SwipeRead.release.xcconfig"; sourceTree = "<group>"; };
 		CDCD419642139AE43B442DF7 /* Pods_SwipeRead.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwipeRead.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E69167145C2D627E54190674 /* Pods-SwipeRead.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwipeRead.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwipeRead/Pods-SwipeRead.debug.xcconfig"; sourceTree = "<group>"; };
@@ -175,7 +175,7 @@
 		AAA37393203EF68600D5605A /* FeedTableView */ = {
 			isa = PBXGroup;
 			children = (
-				AAA373A1203F092F00D5605A /* ListViewCell.swift */,
+				AAA373A1203F092F00D5605A /* FeedTableViewCell.swift */,
 				AAA3738F203EF68100D5605A /* FeedTableViewController.swift */,
 			);
 			path = FeedTableView;
@@ -185,7 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				AAA3739A203F075C00D5605A /* FeedTableViewController.xib */,
-				AAA373A2203F092F00D5605A /* ListViewCell.xib */,
+				AAA373A2203F092F00D5605A /* FeedTableViewCell.xib */,
 			);
 			path = FeedTableView;
 			sourceTree = "<group>";
@@ -252,7 +252,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAA373A4203F092F00D5605A /* ListViewCell.xib in Resources */,
+				AAA373A4203F092F00D5605A /* FeedTableViewCell.xib in Resources */,
 				AAA37373203ED50800D5605A /* LaunchScreen.storyboard in Resources */,
 				AAA3738A203ED70C00D5605A /* DataViewController.xib in Resources */,
 				AAA3739C203F075C00D5605A /* FeedTableViewController.xib in Resources */,
@@ -327,7 +327,7 @@
 				AAA3736E203ED50800D5605A /* SwipeRead.xcdatamodeld in Sources */,
 				AAA3738E203ED99C00D5605A /* ModelController.swift in Sources */,
 				AAA37366203ED50800D5605A /* AppDelegate.swift in Sources */,
-				AAA373A3203F092F00D5605A /* ListViewCell.swift in Sources */,
+				AAA373A3203F092F00D5605A /* FeedTableViewCell.swift in Sources */,
 				AAA3738C203ED98400D5605A /* RSSModel.swift in Sources */,
 				AAA37381203ED66700D5605A /* RootViewController.swift in Sources */,
 				AAA37391203EF68100D5605A /* FeedTableViewController.swift in Sources */,

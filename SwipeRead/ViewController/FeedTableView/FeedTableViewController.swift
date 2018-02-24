@@ -51,7 +51,7 @@ extension FeedTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UINib(nibName: "ListViewCell", bundle: nil).instantiate(withOwner: self, options: nil).first as! ListViewCell
+        let cell = UINib(nibName: "FeedTableViewCell", bundle: nil).instantiate(withOwner: self, options: nil).first as! ListViewCell
         cell.selectionStyle = UITableViewCellSelectionStyle.gray
         cell.term.text = RSSModel.shared.terms[indexPath.row]
         return cell
