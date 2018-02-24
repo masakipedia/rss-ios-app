@@ -10,12 +10,16 @@ import UIKit
 
 class FeedTableViewController: UITableViewController {
     
-    var headerView: UIView!
+    var headerView: FeedTableViewHeader!
     
     override func loadView() {
         // load xib file
         if let tableView = UINib(nibName: "FeedTableViewController", bundle: nil).instantiate(withOwner: self, options: nil).first as? UITableView {
             self.tableView = tableView
+        }
+        
+        if let headerView = UINib(nibName: "FeedTableViewHeader", bundle: nil).instantiate(withOwner: self, options: nil).first as? FeedTableViewHeader {
+            self.headerView = headerView
         }
     }
     
@@ -37,9 +41,10 @@ class FeedTableViewController: UITableViewController {
         
         // Add header view
         let headerHight = self.view.frame.height * 0.15
+        let headerWidth = self.view.frame.width
         tableView.contentInset.top = headerHight
-        headerView = UIView(frame: CGRect(x: 0, y: -(self.view.safeAreaInsets.top + tableView.contentInset.top), width: self.view.frame.width, height: headerHight))
-        headerView.backgroundColor = UIColor.black
+        headerView.frame = CGRect(x: 0, y: -(self.view.safeAreaInsets.top + tableView.contentInset.top), width: headerWidth, height: headerHight)
+        headerView.title.text = "Feed Title"
         tableView.addSubview(headerView)
     }
     

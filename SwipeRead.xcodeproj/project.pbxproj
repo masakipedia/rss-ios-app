@@ -22,6 +22,8 @@
 		AAA3739C203F075C00D5605A /* FeedTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAA3739A203F075C00D5605A /* FeedTableViewController.xib */; };
 		AAA373A3203F092F00D5605A /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA373A1203F092F00D5605A /* FeedTableViewCell.swift */; };
 		AAA373A4203F092F00D5605A /* FeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAA373A2203F092F00D5605A /* FeedTableViewCell.xib */; };
+		AAF8E8BB20418D35003994D4 /* FeedTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAF8E8BA20418D35003994D4 /* FeedTableViewHeader.xib */; };
+		AAF8E8BF20419991003994D4 /* FeedTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF8E8BE20419991003994D4 /* FeedTableViewHeader.swift */; };
 		BC7375A3867159C1281E5C60 /* Pods_SwipeRead.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDCD419642139AE43B442DF7 /* Pods_SwipeRead.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +45,8 @@
 		AAA3739A203F075C00D5605A /* FeedTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedTableViewController.xib; sourceTree = "<group>"; };
 		AAA373A1203F092F00D5605A /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		AAA373A2203F092F00D5605A /* FeedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedTableViewCell.xib; sourceTree = "<group>"; };
+		AAF8E8BA20418D35003994D4 /* FeedTableViewHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedTableViewHeader.xib; sourceTree = "<group>"; };
+		AAF8E8BE20419991003994D4 /* FeedTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewHeader.swift; sourceTree = "<group>"; };
 		B88ABFD30FC601438C45A87D /* Pods-SwipeRead.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwipeRead.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwipeRead/Pods-SwipeRead.release.xcconfig"; sourceTree = "<group>"; };
 		CDCD419642139AE43B442DF7 /* Pods_SwipeRead.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwipeRead.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E69167145C2D627E54190674 /* Pods-SwipeRead.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwipeRead.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwipeRead/Pods-SwipeRead.debug.xcconfig"; sourceTree = "<group>"; };
@@ -176,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				AAA373A1203F092F00D5605A /* FeedTableViewCell.swift */,
+				AAF8E8BE20419991003994D4 /* FeedTableViewHeader.swift */,
 				AAA3738F203EF68100D5605A /* FeedTableViewController.swift */,
 			);
 			path = FeedTableView;
@@ -185,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				AAA3739A203F075C00D5605A /* FeedTableViewController.xib */,
+				AAF8E8BA20418D35003994D4 /* FeedTableViewHeader.xib */,
 				AAA373A2203F092F00D5605A /* FeedTableViewCell.xib */,
 			);
 			path = FeedTableView;
@@ -252,6 +258,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAF8E8BB20418D35003994D4 /* FeedTableViewHeader.xib in Resources */,
 				AAA373A4203F092F00D5605A /* FeedTableViewCell.xib in Resources */,
 				AAA37373203ED50800D5605A /* LaunchScreen.storyboard in Resources */,
 				AAA3738A203ED70C00D5605A /* DataViewController.xib in Resources */,
@@ -329,6 +336,7 @@
 				AAA37366203ED50800D5605A /* AppDelegate.swift in Sources */,
 				AAA373A3203F092F00D5605A /* FeedTableViewCell.swift in Sources */,
 				AAA3738C203ED98400D5605A /* RSSFeedModel.swift in Sources */,
+				AAF8E8BF20419991003994D4 /* FeedTableViewHeader.swift in Sources */,
 				AAA37381203ED66700D5605A /* RootViewController.swift in Sources */,
 				AAA37391203EF68100D5605A /* FeedTableViewController.swift in Sources */,
 			);
