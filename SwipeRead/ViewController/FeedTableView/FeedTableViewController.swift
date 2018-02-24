@@ -29,7 +29,15 @@ class FeedTableViewController: UITableViewController {
         initTableView()
         initHeaderView()
         RSSFeedModel.shared.loadRssFeed(tableView: self.tableView)
+        
     }
+    
+    override func viewDidLayoutSubviews() {
+        let title = RSSFeedModel.shared.feed?.title ?? "[no title]"
+        headerView.title.text = title
+        self.navigationItem.title = title
+    }
+    
     
     private func initTableView() {
         // Eliminate the line where there is no cell
@@ -42,7 +50,6 @@ class FeedTableViewController: UITableViewController {
         let headerWidth = self.view.frame.width
         tableView.contentInset.top = headerHight
         headerView.frame = CGRect(x: 0, y: -(self.view.safeAreaInsets.top + tableView.contentInset.top), width: headerWidth, height: headerHight)
-        headerView.title.text = "Feed Title"
         tableView.addSubview(headerView)
     }
     
@@ -81,8 +88,13 @@ extension FeedTableViewController {
 extension FeedTableViewController {
     
     func showFeedDetailWithIndex(_ index: Int) {
+        // navigation item setting
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: " Back", style: .plain, target: nil, action: nil)
+        
+        // next view controller
         let rvc: RootViewController = storyboard!.instantiateViewController(withIdentifier: "RootViewController") as! RootViewController
         rvc.initIndex = index
+        rvc.navTitle = RSSFeedModel.shared.feed?.title ?? "[no title]"
         show(rvc, sender:nil)
     }
     

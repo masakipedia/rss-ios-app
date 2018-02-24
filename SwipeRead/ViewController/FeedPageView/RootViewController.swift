@@ -19,9 +19,11 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate {
     
     var pageViewController: UIPageViewController?
     var initIndex: Int!
+    var navTitle: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = navTitle
         initPageViewController()
     }
     

@@ -17,7 +17,7 @@ class RSSFeedModel {
     let url: URL
 
     init() {
-        url = URL(string: "http://images.apple.com/main/rss/hotnews/hotnews.rss")!
+        url = URL(string: "https://www.lifehacker.jp/feed/index.xml")!
     }
     
     func itemsCount() -> Int {
