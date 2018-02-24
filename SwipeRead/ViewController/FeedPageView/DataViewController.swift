@@ -18,16 +18,17 @@ class DataViewController: UIViewController {
     }
     
     // vocabulary book index
-    var index: Int = 0
+    var index: Int!
     
-    @IBOutlet weak var term: UILabel!
-    @IBOutlet weak var explanation: UILabel!
+    @IBOutlet weak var feedTitle: UILabel!
+    @IBOutlet weak var feedDescription: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        term.text = RSSFeedModel.shared.feed?.items?[index].title ?? "[no title]"
+        feedTitle.text = RSSFeedModel.shared.feed?.items?[index].title ?? "[no title]"
+        feedDescription.text = RSSFeedModel.shared.feed?.items?[index].description ?? "[no description]"
     }
     
     override func didReceiveMemoryWarning() {
