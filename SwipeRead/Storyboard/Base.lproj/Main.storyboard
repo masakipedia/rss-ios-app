@@ -8,10 +8,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
     </dependencies>
     <scenes>
-        <!--List View Controller-->
+        <!--Feed Table View Controller-->
         <scene sceneID="LC3-3y-CNd">
             <objects>
-                <viewController id="YsE-13-YAE" customClass="ListViewController" customModule="SwipeRead" customModuleProvider="target" sceneMemberID="viewController"/>
+                <viewController id="YsE-13-YAE" customClass="FeedTableViewController" customModule="SwipeRead" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b1t-N8-ZPG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1052" y="-254"/>

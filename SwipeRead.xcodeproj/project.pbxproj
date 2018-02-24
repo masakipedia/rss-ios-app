@@ -18,8 +18,8 @@
 		AAA3738A203ED70C00D5605A /* DataViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAA37388203ED70C00D5605A /* DataViewController.xib */; };
 		AAA3738C203ED98400D5605A /* RSSModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA3738B203ED98400D5605A /* RSSModel.swift */; };
 		AAA3738E203ED99C00D5605A /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA3738D203ED99C00D5605A /* ModelController.swift */; };
-		AAA37391203EF68100D5605A /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA3738F203EF68100D5605A /* ListViewController.swift */; };
-		AAA3739C203F075C00D5605A /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAA3739A203F075C00D5605A /* ListViewController.xib */; };
+		AAA37391203EF68100D5605A /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA3738F203EF68100D5605A /* FeedTableViewController.swift */; };
+		AAA3739C203F075C00D5605A /* FeedTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAA3739A203F075C00D5605A /* FeedTableViewController.xib */; };
 		AAA373A3203F092F00D5605A /* ListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA373A1203F092F00D5605A /* ListViewCell.swift */; };
 		AAA373A4203F092F00D5605A /* ListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAA373A2203F092F00D5605A /* ListViewCell.xib */; };
 		BC7375A3867159C1281E5C60 /* Pods_SwipeRead.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDCD419642139AE43B442DF7 /* Pods_SwipeRead.framework */; };
@@ -39,8 +39,8 @@
 		AAA37388203ED70C00D5605A /* DataViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DataViewController.xib; sourceTree = "<group>"; };
 		AAA3738B203ED98400D5605A /* RSSModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSModel.swift; sourceTree = "<group>"; };
 		AAA3738D203ED99C00D5605A /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
-		AAA3738F203EF68100D5605A /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
-		AAA3739A203F075C00D5605A /* ListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListViewController.xib; sourceTree = "<group>"; };
+		AAA3738F203EF68100D5605A /* FeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
+		AAA3739A203F075C00D5605A /* FeedTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedTableViewController.xib; sourceTree = "<group>"; };
 		AAA373A1203F092F00D5605A /* ListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewCell.swift; sourceTree = "<group>"; };
 		AAA373A2203F092F00D5605A /* ListViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListViewCell.xib; sourceTree = "<group>"; };
 		B88ABFD30FC601438C45A87D /* Pods-SwipeRead.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwipeRead.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwipeRead/Pods-SwipeRead.release.xcconfig"; sourceTree = "<group>"; };
@@ -113,8 +113,8 @@
 		AAA3737A203ED52B00D5605A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				AAA37394203EF69400D5605A /* TableView */,
-				AAA37384203ED68300D5605A /* PageView */,
+				AAA37394203EF69400D5605A /* FeedTableView */,
+				AAA37384203ED68300D5605A /* FeedPageView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -122,8 +122,8 @@
 		AAA3737B203ED53400D5605A /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				AAA37393203EF68600D5605A /* TableView */,
-				AAA37383203ED67400D5605A /* PageView */,
+				AAA37393203EF68600D5605A /* FeedTableView */,
+				AAA37383203ED67400D5605A /* FeedPageView */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -153,41 +153,41 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
-		AAA37383203ED67400D5605A /* PageView */ = {
+		AAA37383203ED67400D5605A /* FeedPageView */ = {
 			isa = PBXGroup;
 			children = (
 				AAA3737F203ED66700D5605A /* RootViewController.swift */,
 				AAA37387203ED70C00D5605A /* DataViewController.swift */,
 				AAA3738D203ED99C00D5605A /* ModelController.swift */,
 			);
-			path = PageView;
+			path = FeedPageView;
 			sourceTree = "<group>";
 		};
-		AAA37384203ED68300D5605A /* PageView */ = {
+		AAA37384203ED68300D5605A /* FeedPageView */ = {
 			isa = PBXGroup;
 			children = (
 				AAA37380203ED66700D5605A /* RootViewController.xib */,
 				AAA37388203ED70C00D5605A /* DataViewController.xib */,
 			);
-			path = PageView;
+			path = FeedPageView;
 			sourceTree = "<group>";
 		};
-		AAA37393203EF68600D5605A /* TableView */ = {
+		AAA37393203EF68600D5605A /* FeedTableView */ = {
 			isa = PBXGroup;
 			children = (
 				AAA373A1203F092F00D5605A /* ListViewCell.swift */,
-				AAA3738F203EF68100D5605A /* ListViewController.swift */,
+				AAA3738F203EF68100D5605A /* FeedTableViewController.swift */,
 			);
-			path = TableView;
+			path = FeedTableView;
 			sourceTree = "<group>";
 		};
-		AAA37394203EF69400D5605A /* TableView */ = {
+		AAA37394203EF69400D5605A /* FeedTableView */ = {
 			isa = PBXGroup;
 			children = (
-				AAA3739A203F075C00D5605A /* ListViewController.xib */,
+				AAA3739A203F075C00D5605A /* FeedTableViewController.xib */,
 				AAA373A2203F092F00D5605A /* ListViewCell.xib */,
 			);
-			path = TableView;
+			path = FeedTableView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,7 +255,7 @@
 				AAA373A4203F092F00D5605A /* ListViewCell.xib in Resources */,
 				AAA37373203ED50800D5605A /* LaunchScreen.storyboard in Resources */,
 				AAA3738A203ED70C00D5605A /* DataViewController.xib in Resources */,
-				AAA3739C203F075C00D5605A /* ListViewController.xib in Resources */,
+				AAA3739C203F075C00D5605A /* FeedTableViewController.xib in Resources */,
 				AAA37370203ED50800D5605A /* Assets.xcassets in Resources */,
 				AAA37382203ED66700D5605A /* RootViewController.xib in Resources */,
 				AAA3736B203ED50800D5605A /* Main.storyboard in Resources */,
@@ -330,7 +330,7 @@
 				AAA373A3203F092F00D5605A /* ListViewCell.swift in Sources */,
 				AAA3738C203ED98400D5605A /* RSSModel.swift in Sources */,
 				AAA37381203ED66700D5605A /* RootViewController.swift in Sources */,
-				AAA37391203EF68100D5605A /* ListViewController.swift in Sources */,
+				AAA37391203EF68100D5605A /* FeedTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
