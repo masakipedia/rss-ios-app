@@ -27,8 +27,7 @@ class DataViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        term.text = RSSModel.shared.terms[index]
-        explanation.text = RSSModel.shared.explanations[index]
+        term.text = RSSFeedModel.shared.feed?.items?[index].title ?? "[no title]"
     }
     
     override func didReceiveMemoryWarning() {

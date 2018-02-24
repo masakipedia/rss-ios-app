@@ -16,7 +16,7 @@
 		AAA37382203ED66700D5605A /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAA37380203ED66700D5605A /* RootViewController.xib */; };
 		AAA37389203ED70C00D5605A /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA37387203ED70C00D5605A /* DataViewController.swift */; };
 		AAA3738A203ED70C00D5605A /* DataViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAA37388203ED70C00D5605A /* DataViewController.xib */; };
-		AAA3738C203ED98400D5605A /* RSSModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA3738B203ED98400D5605A /* RSSModel.swift */; };
+		AAA3738C203ED98400D5605A /* RSSFeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA3738B203ED98400D5605A /* RSSFeedModel.swift */; };
 		AAA3738E203ED99C00D5605A /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA3738D203ED99C00D5605A /* ModelController.swift */; };
 		AAA37391203EF68100D5605A /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA3738F203EF68100D5605A /* FeedTableViewController.swift */; };
 		AAA3739C203F075C00D5605A /* FeedTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAA3739A203F075C00D5605A /* FeedTableViewController.xib */; };
@@ -37,7 +37,7 @@
 		AAA37380203ED66700D5605A /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		AAA37387203ED70C00D5605A /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
 		AAA37388203ED70C00D5605A /* DataViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DataViewController.xib; sourceTree = "<group>"; };
-		AAA3738B203ED98400D5605A /* RSSModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSModel.swift; sourceTree = "<group>"; };
+		AAA3738B203ED98400D5605A /* RSSFeedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSFeedModel.swift; sourceTree = "<group>"; };
 		AAA3738D203ED99C00D5605A /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
 		AAA3738F203EF68100D5605A /* FeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
 		AAA3739A203F075C00D5605A /* FeedTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedTableViewController.xib; sourceTree = "<group>"; };
@@ -131,7 +131,7 @@
 		AAA3737C203ED53E00D5605A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				AAA3738B203ED98400D5605A /* RSSModel.swift */,
+				AAA3738B203ED98400D5605A /* RSSFeedModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -328,7 +328,7 @@
 				AAA3738E203ED99C00D5605A /* ModelController.swift in Sources */,
 				AAA37366203ED50800D5605A /* AppDelegate.swift in Sources */,
 				AAA373A3203F092F00D5605A /* FeedTableViewCell.swift in Sources */,
-				AAA3738C203ED98400D5605A /* RSSModel.swift in Sources */,
+				AAA3738C203ED98400D5605A /* RSSFeedModel.swift in Sources */,
 				AAA37381203ED66700D5605A /* RootViewController.swift in Sources */,
 				AAA37391203EF68100D5605A /* FeedTableViewController.swift in Sources */,
 			);

@@ -10,7 +10,7 @@ import UIKit
 
 class FeedTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var term: UILabel!
+    @IBOutlet weak var title: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

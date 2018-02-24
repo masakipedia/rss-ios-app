@@ -9,7 +9,7 @@
 import UIKit
 
 class FeedTableViewController: UITableViewController {
-
+    
     var headerView: UIView!
     
     override func loadView() {
@@ -23,9 +23,12 @@ class FeedTableViewController: UITableViewController {
         super.viewDidLoad()
         
         initTableView()
+        
+        RSSFeedModel.shared.loadRssFeed(tableView: self.tableView)
+       
     }
     
-    private func initTableView() {
+    func initTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -47,13 +50,13 @@ class FeedTableViewController: UITableViewController {
 
 extension FeedTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return RSSModel.shared.dataCount()
+        return RSSFeedModel.shared.itemsCount()
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UINib(nibName: "FeedTableViewCell", bundle: nil).instantiate(withOwner: self, options: nil).first as! FeedTableViewCell
         cell.selectionStyle = UITableViewCellSelectionStyle.gray
-        cell.term.text = RSSModel.shared.terms[indexPath.row]
+        cell.title.text = RSSFeedModel.shared.feed?.items?[indexPath.row].title ?? "[no title]"
         return cell
     }
 }
