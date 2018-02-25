@@ -12,21 +12,13 @@ class RSSFeedModel {
     
     // singleton
     static var shared = RSSFeedModel()
-    
+    var allUrl: [URL] = []
     var feed: RSSFeed?
-    let url: URL
-    var faviconUrlString = "https://www.google.com/s2/favicons?domain="
+    let url: URL = URL(string: "https://www.lifehacker.jp/feed/index.xml")!
 
-    init() {
-        let urlString = "https://www.lifehacker.jp/feed/index.xml"
-        url = URL(string: urlString)!
-        faviconUrlString += urlString
-    }
-    
     func itemsCount() -> Int {
         return feed?.items?.count ?? 0
     }
-    
     
     /// Load RSS feed and display it in tableview
     ///
@@ -45,5 +37,13 @@ class RSSFeedModel {
         }
     }
 
+    func faviconURL() -> URL {
+        var splitURL = url.absoluteString.split(separator: "/")
+        guard splitURL.count > 1 else {
+            return url
+        }
+        return URL(string: "https://www.google.com/s2/favicons?domain=" + splitURL[0] + "//" + splitURL[1])!
+    }
+    
 }
 
