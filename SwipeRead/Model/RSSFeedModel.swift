@@ -18,7 +18,7 @@ class RSSFeedModel {
     var faviconUrlString = "https://www.google.com/s2/favicons?domain="
 
     init() {
-        let urlString = "https://www.gizmodo.jp/index.xml"
+        let urlString = "https://www.lifehacker.jp/feed/index.xml"
         url = URL(string: urlString)!
         faviconUrlString += urlString
     }

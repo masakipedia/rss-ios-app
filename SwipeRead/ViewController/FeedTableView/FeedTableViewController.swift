@@ -141,13 +141,13 @@ extension FeedTableViewController {
     func configureImage(imageView: UIImageView, URLString: String, placeholderImage: UIImage) {
         let size = imageView.frame.size
         
-        var url = URL(string: URLString)
-        if url == nil {
-            url = URL(string: "placeholder")
+        guard let url = URL(string: URLString) else {
+            imageView.image = placeholderImage
+            return
         }
         
         imageView.af_setImage(
-            withURL: url!,
+            withURL: url,
             placeholderImage: placeholderImage,
             filter: AspectScaledToFillSizeWithRoundedCornersFilter(size: size, radius: 0),
             imageTransition: .crossDissolve(0.2)
