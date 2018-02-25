@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class FeedTableViewCell: UITableViewCell {
 
@@ -24,4 +25,14 @@ class FeedTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func configureCell(with URLString: String, placeholderImage: UIImage) {
+        let size = feedImageView.frame.size
+        
+        feedImageView.af_setImage(
+            withURL: URL(string: URLString)!,
+            placeholderImage: placeholderImage,
+            filter: AspectScaledToFillSizeWithRoundedCornersFilter(size: size, radius: 20.0),
+            imageTransition: .crossDissolve(0.2)
+        )
+    }
 }

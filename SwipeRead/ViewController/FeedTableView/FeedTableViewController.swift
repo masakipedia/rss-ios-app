@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class FeedTableViewController: UITableViewController {
     
     var headerView: FeedTableViewHeader!
+    let downloader = ImageDownloader()
     
     override func loadView() {
         // load xib file
@@ -68,8 +70,10 @@ extension FeedTableViewController {
         cell.selectionStyle = UITableViewCellSelectionStyle.gray
         cell.titleLabel.text = RSSFeedModel.shared.feed?.items?[indexPath.row].title ?? "[no title]"
         
-//        let urlString = RSSFeedModel.shared.feed?.items?[indexPath.row].enclosure?.attributes?.url ?? ""
-    
+        let urlString = RSSFeedModel.shared.feed?.items?[indexPath.row].enclosure?.attributes?.url ?? ""
+        
+        // cell image setting
+        cell.configureCell(with: urlString, placeholderImage: UIImage())
         
         return cell
     }
@@ -124,6 +128,16 @@ extension FeedTableViewController {
 // MARK: - Load image view cell image
 
 extension FeedTableViewController {
-    
+    func downloadImage(imageView: UIImageView, indexPath: IndexPath, url: URL) {
+        let downloader = ImageDownloader()
+        let urlRequest = URLRequest(url: url)
+        
+        downloader.download(urlRequest) { response in
+            if let image = response.result.value {
+                imageView.image = image
+            }
+        }
+        
+    }
 }
 
