@@ -66,7 +66,11 @@ extension FeedTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UINib(nibName: "FeedTableViewCell", bundle: nil).instantiate(withOwner: self, options: nil).first as! FeedTableViewCell
         cell.selectionStyle = UITableViewCellSelectionStyle.gray
-        cell.title.text = RSSFeedModel.shared.feed?.items?[indexPath.row].title ?? "[no title]"
+        cell.titleLabel.text = RSSFeedModel.shared.feed?.items?[indexPath.row].title ?? "[no title]"
+        
+//        let urlString = RSSFeedModel.shared.feed?.items?[indexPath.row].enclosure?.attributes?.url ?? ""
+    
+        
         return cell
     }
 }
@@ -116,4 +120,10 @@ extension FeedTableViewController {
     }
 }
 
+
+// MARK: - Load image view cell image
+
+extension FeedTableViewController {
+    
+}
 

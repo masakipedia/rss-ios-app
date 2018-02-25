@@ -4,4 +4,5 @@ use_frameworks!
 
 target 'SwipeRead' do
   pod 'FeedKit', '~> 6.0'
+  pod 'AlamofireImage', '~> 3.3'
 end
