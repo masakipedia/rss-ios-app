@@ -15,9 +15,12 @@ class RSSFeedModel {
     
     var feed: RSSFeed?
     let url: URL
+    var faviconUrlString = "https://www.google.com/s2/favicons?domain="
 
     init() {
-        url = URL(string: "https://www.lifehacker.jp/feed/index.xml")!
+        let urlString = "https://www.lifehacker.jp/feed/index.xml"
+        url = URL(string: urlString)!
+        faviconUrlString += urlString
     }
     
     func itemsCount() -> Int {

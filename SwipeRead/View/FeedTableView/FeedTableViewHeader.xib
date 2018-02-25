@@ -33,6 +33,7 @@
                 <constraint firstItem="F5A-Ew-dfk" firstAttribute="height" secondItem="lxU-he-hBf" secondAttribute="height" id="9hm-I8-NxB"/>
                 <constraint firstItem="F5A-Ew-dfk" firstAttribute="centerY" secondItem="lxU-he-hBf" secondAttribute="centerY" id="KZo-D5-trs"/>
                 <constraint firstItem="92W-eJ-Fcx" firstAttribute="width" secondItem="lxU-he-hBf" secondAttribute="width" id="WQS-D6-QoP"/>
+                <constraint firstItem="92W-eJ-Fcx" firstAttribute="centerX" secondItem="lxU-he-hBf" secondAttribute="centerX" id="aG2-UF-e4x"/>
                 <constraint firstItem="92W-eJ-Fcx" firstAttribute="centerX" secondItem="lxU-he-hBf" secondAttribute="centerX" id="cJv-HU-Su8"/>
                 <constraint firstItem="F5A-Ew-dfk" firstAttribute="centerX" secondItem="lxU-he-hBf" secondAttribute="centerX" id="eUu-Qi-bGu"/>
                 <constraint firstItem="F5A-Ew-dfk" firstAttribute="width" secondItem="lxU-he-hBf" secondAttribute="width" id="uzG-fV-x9b"/>
@@ -43,7 +44,7 @@
                 <outlet property="headerImageView" destination="F5A-Ew-dfk" id="HRn-Vm-cnD"/>
                 <outlet property="title" destination="92W-eJ-Fcx" id="Eeq-dy-fPc"/>
             </connections>
-            <point key="canvasLocation" x="138" y="162"/>
+            <point key="canvasLocation" x="137.5" y="161.5"/>
         </view>
     </objects>
 </document>

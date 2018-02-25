@@ -25,16 +25,6 @@ class FeedTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configureCell(with URLString: String, placeholderImage: UIImage) {
-        let size = feedImageView.frame.size
-        
-        feedImageView.af_setImage(
-            withURL: URL(string: URLString)!,
-            placeholderImage: placeholderImage,
-            filter: AspectScaledToFillSizeWithRoundedCornersFilter(size: size, radius: size.height * 0.15),
-            imageTransition: .crossDissolve(0.2)
-        )
-    }
 }
 
 

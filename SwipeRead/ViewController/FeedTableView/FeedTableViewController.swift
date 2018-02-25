@@ -40,10 +40,13 @@ class FeedTableViewController: UITableViewController {
         self.navigationItem.title = title
         
         if let urlString = RSSFeedModel.shared.feed?.items?.first?.enclosure?.attributes?.url {
+            
             // header image setting
-            headerView.configureHeader(with: urlString, placeholderImage: UIImage(named: "placeholder")!)
+            configureImage(imageView: headerView.headerImageView, URLString: urlString, placeholderImage: UIImage(named: "placeholder")!)
             
         }
+        
+        
     }
     
     
@@ -79,7 +82,7 @@ extension FeedTableViewController {
         let urlString = RSSFeedModel.shared.feed?.items?[indexPath.row].enclosure?.attributes?.url ?? ""
         
         // cell image setting
-        cell.configureCell(with: urlString, placeholderImage: UIImage(named: "placeholder")!)
+        configureImage(imageView: cell.feedImageView, URLString: urlString, placeholderImage: UIImage(named: "placeholder")!)
         
         return cell
     }
@@ -131,19 +134,19 @@ extension FeedTableViewController {
 }
 
 
-// MARK: - Load image view cell image
+// MARK: - set image from url
 
 extension FeedTableViewController {
-    func downloadImage(imageView: UIImageView, indexPath: IndexPath, url: URL) {
-        let downloader = ImageDownloader()
-        let urlRequest = URLRequest(url: url)
+    
+    func configureImage(imageView: UIImageView, URLString: String, placeholderImage: UIImage) {
+        let size = imageView.frame.size
         
-        downloader.download(urlRequest) { response in
-            if let image = response.result.value {
-                imageView.image = image
-            }
-        }
-        
+        imageView.af_setImage(
+            withURL: URL(string: URLString)!,
+            placeholderImage: placeholderImage,
+            filter: AspectScaledToFillSizeWithRoundedCornersFilter(size: size, radius: 0),
+            imageTransition: .crossDissolve(0.2)
+        )
     }
 }
 
