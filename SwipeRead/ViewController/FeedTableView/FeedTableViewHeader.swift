@@ -23,5 +23,7 @@ class FeedTableViewHeader: UIView {
             filter: AspectScaledToFillSizeWithRoundedCornersFilter(size: size, radius: 0),
             imageTransition: .crossDissolve(0.2)
         )
+        
+        headerImageView.image.
     }
 }
