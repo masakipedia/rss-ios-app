@@ -31,8 +31,11 @@ class FeedTableViewCell: UITableViewCell {
         feedImageView.af_setImage(
             withURL: URL(string: URLString)!,
             placeholderImage: placeholderImage,
-            filter: AspectScaledToFillSizeWithRoundedCornersFilter(size: size, radius: 20.0),
+            filter: AspectScaledToFillSizeWithRoundedCornersFilter(size: size, radius: size.height * 0.15),
             imageTransition: .crossDissolve(0.2)
         )
     }
 }
+
+
+

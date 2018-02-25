@@ -38,6 +38,12 @@ class FeedTableViewController: UITableViewController {
         let title = RSSFeedModel.shared.feed?.title ?? "[no title]"
         headerView.title.text = title
         self.navigationItem.title = title
+        
+        if let urlString = RSSFeedModel.shared.feed?.items?.first?.enclosure?.attributes?.url {
+            // header image setting
+            headerView.configureHeader(with: urlString, placeholderImage: UIImage(named: "placeholder")!)
+            
+        }
     }
     
     
