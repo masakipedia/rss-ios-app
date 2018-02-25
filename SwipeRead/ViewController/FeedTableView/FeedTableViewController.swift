@@ -73,7 +73,7 @@ extension FeedTableViewController {
         let urlString = RSSFeedModel.shared.feed?.items?[indexPath.row].enclosure?.attributes?.url ?? ""
         
         // cell image setting
-        cell.configureCell(with: urlString, placeholderImage: UIImage())
+        cell.configureCell(with: urlString, placeholderImage: UIImage(named: "placeholder")!)
         
         return cell
     }
