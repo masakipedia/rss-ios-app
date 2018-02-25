@@ -14,7 +14,7 @@ class RSSFeedModel {
     static var shared = RSSFeedModel()
     var allUrl: [URL] = []
     var feed: RSSFeed?
-    let url: URL = URL(string: "https://www.lifehacker.jp/feed/index.xml")!
+    let url: URL = URL(string: "https://www.gizmodo.jp/index.xml")!
 
     func itemsCount() -> Int {
         return feed?.items?.count ?? 0

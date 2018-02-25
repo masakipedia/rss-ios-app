@@ -13,5 +13,5 @@ class FeedTableViewHeader: UIView {
 
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var headerImageView: UIImageView!
-    
+    @IBOutlet weak var faviconImageView: UIImageView!
 }

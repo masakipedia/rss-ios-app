@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,25 +23,37 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Header View" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="92W-eJ-Fcx">
                     <rect key="frame" x="-0.5" y="311" width="375" height="45"/>
                     <constraints>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="APv-gJ-k6Y"/>
+                        <constraint firstAttribute="width" secondItem="92W-eJ-Fcx" secondAttribute="height" multiplier="25:3" id="8ip-TI-PwQ"/>
+                        <constraint firstAttribute="height" constant="45" id="qYb-XU-gvf"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TqV-XF-fag">
+                    <rect key="frame" x="172" y="281" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="TqV-XF-fag" secondAttribute="height" multiplier="1:1" id="2aY-nd-Kf3"/>
+                        <constraint firstAttribute="height" constant="30" id="zdm-E2-erW"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <constraints>
                 <constraint firstItem="F5A-Ew-dfk" firstAttribute="height" secondItem="lxU-he-hBf" secondAttribute="height" id="9hm-I8-NxB"/>
+                <constraint firstItem="92W-eJ-Fcx" firstAttribute="centerX" secondItem="lxU-he-hBf" secondAttribute="centerX" id="JJH-DE-sNP"/>
                 <constraint firstItem="F5A-Ew-dfk" firstAttribute="centerY" secondItem="lxU-he-hBf" secondAttribute="centerY" id="KZo-D5-trs"/>
+                <constraint firstItem="TqV-XF-fag" firstAttribute="centerX" secondItem="lxU-he-hBf" secondAttribute="centerX" id="V4U-MI-wOp"/>
                 <constraint firstItem="92W-eJ-Fcx" firstAttribute="width" secondItem="lxU-he-hBf" secondAttribute="width" id="WQS-D6-QoP"/>
                 <constraint firstItem="92W-eJ-Fcx" firstAttribute="centerX" secondItem="lxU-he-hBf" secondAttribute="centerX" id="aG2-UF-e4x"/>
                 <constraint firstItem="92W-eJ-Fcx" firstAttribute="centerX" secondItem="lxU-he-hBf" secondAttribute="centerX" id="cJv-HU-Su8"/>
                 <constraint firstItem="F5A-Ew-dfk" firstAttribute="centerX" secondItem="lxU-he-hBf" secondAttribute="centerX" id="eUu-Qi-bGu"/>
                 <constraint firstItem="F5A-Ew-dfk" firstAttribute="width" secondItem="lxU-he-hBf" secondAttribute="width" id="uzG-fV-x9b"/>
                 <constraint firstItem="92W-eJ-Fcx" firstAttribute="centerY" secondItem="lxU-he-hBf" secondAttribute="centerY" id="y0i-9N-Upf"/>
+                <constraint firstItem="92W-eJ-Fcx" firstAttribute="top" secondItem="TqV-XF-fag" secondAttribute="bottom" id="zNd-Gv-E4G"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="E1k-1z-p6l"/>
             <connections>
+                <outlet property="faviconImageView" destination="TqV-XF-fag" id="JNf-PI-Wa0"/>
                 <outlet property="headerImageView" destination="F5A-Ew-dfk" id="HRn-Vm-cnD"/>
                 <outlet property="title" destination="92W-eJ-Fcx" id="Eeq-dy-fPc"/>
             </connections>
