@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AA22549320430A6C004B9F63 /* RssListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA22549120430A6C004B9F63 /* RssListTableViewController.swift */; };
-		AA22549420430A6C004B9F63 /* RssListTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA22549220430A6C004B9F63 /* RssListTableViewController.xib */; };
+		AA22549320430A6C004B9F63 /* RSSListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA22549120430A6C004B9F63 /* RSSListTableViewController.swift */; };
+		AA22549420430A6C004B9F63 /* RSSListTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA22549220430A6C004B9F63 /* RSSListTableViewController.xib */; };
+		AA2254982043A868004B9F63 /* RSSListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2254962043A868004B9F63 /* RSSListTableViewCell.swift */; };
+		AA2254992043A868004B9F63 /* RSSListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA2254972043A868004B9F63 /* RSSListTableViewCell.xib */; };
 		AAA37366203ED50800D5605A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA37365203ED50800D5605A /* AppDelegate.swift */; };
 		AAA3736B203ED50800D5605A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAA37369203ED50800D5605A /* Main.storyboard */; };
 		AAA3736E203ED50800D5605A /* SwipeRead.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AAA3736C203ED50800D5605A /* SwipeRead.xcdatamodeld */; };
@@ -30,8 +32,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AA22549120430A6C004B9F63 /* RssListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RssListTableViewController.swift; sourceTree = "<group>"; };
-		AA22549220430A6C004B9F63 /* RssListTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RssListTableViewController.xib; sourceTree = "<group>"; };
+		AA22549120430A6C004B9F63 /* RSSListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSListTableViewController.swift; sourceTree = "<group>"; };
+		AA22549220430A6C004B9F63 /* RSSListTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RSSListTableViewController.xib; sourceTree = "<group>"; };
+		AA2254962043A868004B9F63 /* RSSListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSListTableViewCell.swift; sourceTree = "<group>"; };
+		AA2254972043A868004B9F63 /* RSSListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RSSListTableViewCell.xib; sourceTree = "<group>"; };
 		AAA37362203ED50800D5605A /* SwipeRead.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwipeRead.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAA37365203ED50800D5605A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAA3736A203ED50800D5605A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -80,7 +84,8 @@
 		AA22549020430A3B004B9F63 /* RssListTableView */ = {
 			isa = PBXGroup;
 			children = (
-				AA22549120430A6C004B9F63 /* RssListTableViewController.swift */,
+				AA22549120430A6C004B9F63 /* RSSListTableViewController.swift */,
+				AA2254962043A868004B9F63 /* RSSListTableViewCell.swift */,
 			);
 			path = RssListTableView;
 			sourceTree = "<group>";
@@ -88,7 +93,8 @@
 		AA22549520430A94004B9F63 /* RssListTableView */ = {
 			isa = PBXGroup;
 			children = (
-				AA22549220430A6C004B9F63 /* RssListTableViewController.xib */,
+				AA2254972043A868004B9F63 /* RSSListTableViewCell.xib */,
+				AA22549220430A6C004B9F63 /* RSSListTableViewController.xib */,
 			);
 			path = RssListTableView;
 			sourceTree = "<group>";
@@ -280,13 +286,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA2254992043A868004B9F63 /* RSSListTableViewCell.xib in Resources */,
 				AAF8E8BB20418D35003994D4 /* FeedTableViewHeader.xib in Resources */,
 				AAA373A4203F092F00D5605A /* FeedTableViewCell.xib in Resources */,
 				AAA37373203ED50800D5605A /* LaunchScreen.storyboard in Resources */,
 				AAA3738A203ED70C00D5605A /* DataViewController.xib in Resources */,
 				AAA3739C203F075C00D5605A /* FeedTableViewController.xib in Resources */,
 				AAA37370203ED50800D5605A /* Assets.xcassets in Resources */,
-				AA22549420430A6C004B9F63 /* RssListTableViewController.xib in Resources */,
+				AA22549420430A6C004B9F63 /* RSSListTableViewController.xib in Resources */,
 				AAA37382203ED66700D5605A /* RootViewController.xib in Resources */,
 				AAA3736B203ED50800D5605A /* Main.storyboard in Resources */,
 			);
@@ -357,10 +364,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA2254982043A868004B9F63 /* RSSListTableViewCell.swift in Sources */,
 				AAA37389203ED70C00D5605A /* DataViewController.swift in Sources */,
 				AAA3736E203ED50800D5605A /* SwipeRead.xcdatamodeld in Sources */,
 				AAA3738E203ED99C00D5605A /* ModelController.swift in Sources */,
-				AA22549320430A6C004B9F63 /* RssListTableViewController.swift in Sources */,
+				AA22549320430A6C004B9F63 /* RSSListTableViewController.swift in Sources */,
 				AAA37366203ED50800D5605A /* AppDelegate.swift in Sources */,
 				AAA373A3203F092F00D5605A /* FeedTableViewCell.swift in Sources */,
 				AAA3738C203ED98400D5605A /* RSSFeedModel.swift in Sources */,

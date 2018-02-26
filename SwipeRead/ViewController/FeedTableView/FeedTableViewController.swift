@@ -51,7 +51,6 @@ class FeedTableViewController: UITableViewController {
         
     }
     
-    
     private func initTableView() {
         // Eliminate the line where there is no cell
         tableView.tableFooterView = UIView()
