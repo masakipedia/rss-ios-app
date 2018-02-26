@@ -23,8 +23,6 @@ class RSSFeedModel {
         "https://www.buildinsider.net/rss",
         "https://codezine.jp/rss/new/20/index.xml",
         "http://feed.rssad.jp/rss/gigazine/rss_2.0",
-        "http://rss.rssad.jp/rss/itmtop/1.0/topstory.xml",
-        "https://techwave.jp/rsslatest.xml",
         "http://getnews.jp/feed/ext/orig",
         "https://rss.allabout.co.jp/aa/latest/",
         "https://techable.jp/feed",
@@ -35,8 +33,6 @@ class RSSFeedModel {
         "Build Insider",
         "CodeZine",
         "GIGAZINE",
-        "IT総合情報ポータル「ITmedia」",
-        "TechWave（テックウェーブ） #WAVE",
         "ガジェット通信",
         "All About（オールアバウト）",
         "Techable（テッカブル）"
@@ -115,13 +111,6 @@ extension RSSFeedModel {
         return URL(string: "https://www.google.com/s2/favicons?domain=" + splitURL[0] + "//" + splitURL[1])!
     }
     
-    func getImageURLFromString(str: String) -> String {
-        if let range = str.range(of: "src=\"") {
-            let imgTagFirstToEnd = str.suffix(str.count - range.upperBound.encodedOffset)
-            return String(imgTagFirstToEnd[imgTagFirstToEnd.startIndex..<imgTagFirstToEnd.index(of: "\"")!])
-        }
-        return ""
-    }
 }
 
 

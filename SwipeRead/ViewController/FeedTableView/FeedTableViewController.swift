@@ -45,7 +45,7 @@ class FeedTableViewController: UITableViewController {
         }
         if headerImageURLString == "" {
             if let str = RSSFeedModel.shared.feed?.items?.first?.content?.contentEncoded {
-                headerImageURLString = RSSFeedModel.shared.getImageURLFromString(str: str)
+                headerImageURLString = getImageURLFromString(str: str)
             }
         }
         
@@ -91,11 +91,14 @@ extension FeedTableViewController {
             cell.titleLabel.text = item.title ?? "[no title]"
             
             urlString = item.enclosure?.attributes?.url ?? ""
-            
             if urlString == "" {
                 if let str = item.content?.contentEncoded {
-                    urlString = RSSFeedModel.shared.getImageURLFromString(str: str)
+                    urlString = getImageURLFromString(str: str)
                 }
+            }
+            if urlString == "" {
+                urlString = getImageURLFromString(str: item.description ?? "")
+                print(urlString)
             }
             if urlString == "" {
                 urlString = RSSFeedModel.shared.feed?.image?.url ?? ""
@@ -173,6 +176,16 @@ extension FeedTableViewController {
             filter: AspectScaledToFillSizeWithRoundedCornersFilter(size: size, radius: size.height * 0.15),
             imageTransition: .crossDissolve(0.2)
         )
+    }
+    
+    
+    func getImageURLFromString(str: String) -> String {
+        if let range = str.range(of: "src=\"") {
+            var src = str[range.upperBound..<str.endIndex]
+            src = src[src.startIndex..<src.index(of: "\"")!]
+            return String(src)
+        }
+        return ""
     }
 }
 
