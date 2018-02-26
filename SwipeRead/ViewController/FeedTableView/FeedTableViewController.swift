@@ -99,7 +99,6 @@ extension FeedTableViewController {
             }
             if urlString == "" {
                 urlString = getImageURLFromString(str: item.description ?? "")
-                print(urlString)
             }
             if urlString == "" {
                 urlString = RSSFeedModel.shared.feed?.image?.url ?? ""

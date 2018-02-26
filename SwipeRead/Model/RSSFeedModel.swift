@@ -18,6 +18,7 @@ class RSSFeedModel {
     
     var feed: RSSFeed?
     private(set) var allFeedsURLString: [String] = [
+        "https://www.huffingtonpost.jp/feeds/index.xml",
         "https://www.gizmodo.jp/index.xml",
         "https://www.lifehacker.jp/feed/index.xml",
         "https://www.buildinsider.net/rss",
@@ -26,8 +27,10 @@ class RSSFeedModel {
         "http://getnews.jp/feed/ext/orig",
         "https://rss.allabout.co.jp/aa/latest/",
         "https://techable.jp/feed",
+        "https://liginc.co.jp/feed",
     ]
     private(set) var allFeedsName: [String] = [
+        "HuffPost Japan",
         "ギズモード・ジャパン",
         "ライフハッカー [日本版]",
         "Build Insider",
@@ -35,7 +38,8 @@ class RSSFeedModel {
         "GIGAZINE",
         "ガジェット通信",
         "All About（オールアバウト）",
-        "Techable（テッカブル）"
+        "Techable（テッカブル）",
+        "株式会社LIG", 
     ]
     private(set) var url: URL!
 }
