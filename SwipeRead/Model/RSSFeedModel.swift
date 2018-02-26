@@ -26,6 +26,7 @@ class RSSFeedModel {
         "http://rss.rssad.jp/rss/itmtop/1.0/topstory.xml",
         "https://techwave.jp/rsslatest.xml",
         "http://getnews.jp/feed/ext/orig",
+        "https://rss.allabout.co.jp/aa/latest/",
     ]
     private(set) var allFeedsName: [String] = [
         "ギズモード・ジャパン",
@@ -36,6 +37,7 @@ class RSSFeedModel {
         "IT総合情報ポータル「ITmedia」",
         "TechWave（テックウェーブ） #WAVE",
         "ガジェット通信",
+        "All About（オールアバウト）",
     ]
     private(set) var url: URL!
 }

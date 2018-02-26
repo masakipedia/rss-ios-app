@@ -83,7 +83,6 @@ extension FeedTableViewController {
         cell.titleLabel.text = RSSFeedModel.shared.feed?.items?[indexPath.row].title ?? "[no title]"
         
         var urlString = RSSFeedModel.shared.feed?.items?[indexPath.row].enclosure?.attributes?.url ?? ""
-        
         if urlString == "" {
             urlString = RSSFeedModel.shared.feed?.image?.url ?? ""
         }

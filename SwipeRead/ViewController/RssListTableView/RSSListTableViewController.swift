@@ -71,8 +71,6 @@ extension RssListTableViewController {
         
         // next view controller
         let rvc: FeedTableViewController = storyboard!.instantiateViewController(withIdentifier: "FeedTableViewController") as! FeedTableViewController
-//        rvc.navigationItem.title = index
-//        rvc.navTitle = RSSFeedModel.shared.feed?.title ?? "[no title]"
         show(rvc, sender:nil)
     }
     
