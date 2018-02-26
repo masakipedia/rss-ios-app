@@ -41,7 +41,7 @@ extension RssListTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UINib(nibName: "RSSListTableViewCell", bundle: nil).instantiate(withOwner: self, options: nil).first as! RSSListTableViewCell
 
-        cell.textLabel?.text = RSSFeedModel.shared.getRssFeedName(urlString: RSSFeedModel.shared.allFeedsURLString[indexPath.row])
+        cell.textLabel?.text = RSSFeedModel.shared.allFeedsName[indexPath.row]
         
         return cell
     }

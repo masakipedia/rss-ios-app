@@ -18,7 +18,7 @@ class RSSFeedModel {
     
     var feed: RSSFeed?
     private(set) var allFeedsURLString: [String] = ["https://www.gizmodo.jp/index.xml", "https://www.lifehacker.jp/feed/index.xml"]
-    private(set) var allFeedsNameDictionary: [String: String] = ["https://www.gizmodo.jp/index.xml": "ギズモード・ジャパン", "https://www.lifehacker.jp/feed/index.xml": "ライフハッカー [日本版]"]
+    private(set) var allFeedsName: [String] = ["ギズモード・ジャパン", "ライフハッカー [日本版]"]
     private(set) var url: URL!
 }
 
@@ -87,14 +87,6 @@ extension RSSFeedModel {
         return URL(string: "https://www.google.com/s2/favicons?domain=" + splitURL[0] + "//" + splitURL[1])!
     }
     
-    
-    /// rss feed name getter
-    ///
-    /// - Parameter urlString: rss feed url
-    /// - Returns: rss feed name
-    func getRssFeedName(urlString: String) -> String {
-        return allFeedsNameDictionary[urlString] ?? "[no name]"
-    }
 }
 
 
