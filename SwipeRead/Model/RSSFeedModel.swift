@@ -82,7 +82,7 @@ extension RSSFeedModel {
     func getFaviconURL() -> URL {
         var splitURL = self.url.absoluteString.split(separator: "/")
         guard splitURL.count > 1 else {
-            return self.url
+            return URL(string: "https://www.google.com/s2/favicons?domain=" + self.url.absoluteString)!
         }
         return URL(string: "https://www.google.com/s2/favicons?domain=" + splitURL[0] + "//" + splitURL[1])!
     }
