@@ -28,10 +28,9 @@ class FeedTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        initTableView()
         initHeaderView()
+        initTableView()
         RSSFeedModel.shared.loadRssFeed(tableView: self.tableView)
-        
     }
     
     override func viewDidLayoutSubviews() {
@@ -53,7 +52,9 @@ class FeedTableViewController: UITableViewController {
         configureImage(imageView: headerView.headerImageView, URLString: headerImageURLString, placeholderImage: UIImage(named: "placeholder")!)
             
         // favicon image settiong
-        configureImage(imageView: headerView.faviconImageView, URLString: RSSFeedModel.shared.getFaviconURL().absoluteString, placeholderImage: UIImage(named: "placeholder")!)
+        configureImage(imageView: headerView.faviconImageView,
+                       URLString: RSSFeedModel.shared.getFaviconURL(stringURL: RSSFeedModel.shared.url.absoluteString).absoluteString,
+                       placeholderImage: UIImage(named: "placeholder")!)
         
         
     }

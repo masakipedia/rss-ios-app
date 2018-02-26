@@ -102,11 +102,12 @@ extension RSSFeedModel {
     /// The url is using google api.
     /// https://www.google.com/s2/favicons?domain="want site url"
     ///
+    /// - Parameter urlString: string url
     /// - Returns: favicon image url
-    func getFaviconURL() -> URL {
-        var splitURL = self.url.absoluteString.split(separator: "/")
+    func getFaviconURL(stringURL: String) -> URL {
+        var splitURL = stringURL.split(separator: "/")
         guard splitURL.count > 1 else {
-            return URL(string: "https://www.google.com/s2/favicons?domain=" + self.url.absoluteString)!
+            return URL(string: "https://www.google.com/s2/favicons?domain=" + "nothing")!
         }
         return URL(string: "https://www.google.com/s2/favicons?domain=" + splitURL[0] + "//" + splitURL[1])!
     }

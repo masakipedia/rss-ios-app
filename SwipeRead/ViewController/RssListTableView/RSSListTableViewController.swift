@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class RssListTableViewController: UITableViewController {
         
@@ -41,8 +42,10 @@ extension RssListTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UINib(nibName: "RSSListTableViewCell", bundle: nil).instantiate(withOwner: self, options: nil).first as! RSSListTableViewCell
 
-        cell.textLabel?.text = RSSFeedModel.shared.allFeedsName[indexPath.row]
-        
+        cell.titleLabel.text = RSSFeedModel.shared.allFeedsName[indexPath.row]
+        configureImage(imageView: cell.faviconImageView,
+                       URLString: RSSFeedModel.shared.getFaviconURL(stringURL: RSSFeedModel.shared.allFeedsURLString[indexPath.row]).absoluteString,
+                       placeholderImage: UIImage(named: "placeholder")!)
         return cell
     }
     
@@ -74,5 +77,28 @@ extension RssListTableViewController {
         show(rvc, sender:nil)
     }
     
+}
+
+
+
+// MARK: - set image from url
+
+extension RssListTableViewController {
+    
+    func configureImage(imageView: UIImageView, URLString: String, placeholderImage: UIImage) {
+        let size = imageView.frame.size
+        
+        guard let url = URL(string: URLString) else {
+            imageView.image = placeholderImage
+            return
+        }
+        
+        imageView.af_setImage(
+            withURL: url,
+            placeholderImage: placeholderImage,
+            filter: AspectScaledToFillSizeWithRoundedCornersFilter(size: size, radius: size.height * 0.15),
+            imageTransition: .crossDissolve(0.2)
+        )
+    }
 }
 
