@@ -46,7 +46,7 @@ class FeedTableViewController: UITableViewController {
             
         }
         
-        configureImage(imageView: headerView.faviconImageView, URLString: RSSFeedModel.shared.faviconURL().absoluteString, placeholderImage: UIImage(named: "placeholder")!)
+        configureImage(imageView: headerView.faviconImageView, URLString: RSSFeedModel.shared.getFaviconURL().absoluteString, placeholderImage: UIImage(named: "placeholder")!)
         
         
     }

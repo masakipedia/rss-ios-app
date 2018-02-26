@@ -17,7 +17,7 @@ class RSSFeedModel {
     static var shared = RSSFeedModel()
     
     var feed: RSSFeed?
-    var allFeedsURLString: [String] = ["https://www.gizmodo.jp/index.xml", "https://www.lifehacker.jp/feed/index.xml"]
+    private(set) var allFeedsURLString: [String] = ["https://www.gizmodo.jp/index.xml", "https://www.lifehacker.jp/feed/index.xml"]
     private(set) var url: URL!
 }
 
@@ -45,17 +45,6 @@ extension RSSFeedModel {
     }
 
     
-    /// Return favicon image url. The url is using google api.
-    /// https://www.google.com/s2/favicons?domain="want site url"
-    ///
-    /// - Returns: favicon image url
-    func faviconURL() -> URL {
-        var splitURL = self.url.absoluteString.split(separator: "/")
-        guard splitURL.count > 1 else {
-            return self.url
-        }
-        return URL(string: "https://www.google.com/s2/favicons?domain=" + splitURL[0] + "//" + splitURL[1])!
-    }
     
 }
 
@@ -85,6 +74,19 @@ extension RSSFeedModel {
         return feed?.items?.count ?? 0
     }
     
+    
+    /// favicon image url getter
+    /// The url is using google api.
+    /// https://www.google.com/s2/favicons?domain="want site url"
+    ///
+    /// - Returns: favicon image url
+    func getFaviconURL() -> URL {
+        var splitURL = self.url.absoluteString.split(separator: "/")
+        guard splitURL.count > 1 else {
+            return self.url
+        }
+        return URL(string: "https://www.google.com/s2/favicons?domain=" + splitURL[0] + "//" + splitURL[1])!
+    }
 }
 
 
