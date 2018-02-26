@@ -27,6 +27,7 @@ class RSSFeedModel {
         "https://techwave.jp/rsslatest.xml",
         "http://getnews.jp/feed/ext/orig",
         "https://rss.allabout.co.jp/aa/latest/",
+        "https://techable.jp/feed",
     ]
     private(set) var allFeedsName: [String] = [
         "ギズモード・ジャパン",
@@ -38,6 +39,7 @@ class RSSFeedModel {
         "TechWave（テックウェーブ） #WAVE",
         "ガジェット通信",
         "All About（オールアバウト）",
+        "Techable（テッカブル）"
     ]
     private(set) var url: URL!
 }
@@ -112,9 +114,6 @@ extension RSSFeedModel {
         }
         return URL(string: "https://www.google.com/s2/favicons?domain=" + splitURL[0] + "//" + splitURL[1])!
     }
-    
-    
-    
     
 }
 
