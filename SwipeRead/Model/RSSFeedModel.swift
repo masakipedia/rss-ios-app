@@ -8,6 +8,9 @@
 
 import FeedKit
 
+
+// MARK: - Field
+
 class RSSFeedModel {
     
     // singleton
@@ -15,17 +18,15 @@ class RSSFeedModel {
     
     var feed: RSSFeed?
     var allFeedsURLString: [String] = ["https://www.gizmodo.jp/index.xml", "https://www.lifehacker.jp/feed/index.xml"]
-    var url: URL!
+    private(set) var url: URL!
+}
 
+
+// MARK: - Method
+
+extension RSSFeedModel {
     
-    /// Return number of items that the current URL has
-    ///
-    /// - Returns: items count
-    func itemsCount() -> Int {
-        return feed?.items?.count ?? 0
-    }
-    
-    
+
     /// Load RSS feed and display it in tableview
     ///
     /// - Parameter tableView: display at tableview
@@ -57,4 +58,33 @@ class RSSFeedModel {
     }
     
 }
+
+
+// MARK: - Property
+
+extension RSSFeedModel {
+    
+    
+    /// url setter
+    ///
+    /// - Parameter urlString: string url
+    func setCurrentURL(urlString: String) -> Bool {
+        guard let url = URL(string: urlString) else {
+            print("\nURL Error: The urlString can not convert to url.\n\n")
+            return false
+        }
+        self.url = url
+        return true
+    }
+    
+    
+    /// feed items count getter
+    ///
+    /// - Returns: items count
+    func getItemsCount() -> Int {
+        return feed?.items?.count ?? 0
+    }
+    
+}
+
 

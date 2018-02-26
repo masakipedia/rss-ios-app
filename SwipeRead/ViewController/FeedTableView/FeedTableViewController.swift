@@ -72,7 +72,7 @@ class FeedTableViewController: UITableViewController {
 
 extension FeedTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return RSSFeedModel.shared.itemsCount()
+        return RSSFeedModel.shared.getItemsCount()
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -54,7 +54,7 @@ extension RssListTableViewController {
 extension RssListTableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        RSSFeedModel.shared.url = URL(string: RSSFeedModel.shared.allFeedsURLString[indexPath.row])!
+        _ = RSSFeedModel.shared.setCurrentURL(urlString: RSSFeedModel.shared.allFeedsURLString[indexPath.row])
         showFeedWithIndex(indexPath.row)
     }
         

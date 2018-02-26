@@ -26,7 +26,7 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
     
     func viewControllerAtIndex(_ index: Int, storyboard: UIStoryboard) -> DataViewController? {
         // Return the data view controller for the given index.
-        if (RSSFeedModel.shared.itemsCount() == 0) || (index >= RSSFeedModel.shared.itemsCount()) {
+        if (RSSFeedModel.shared.getItemsCount() == 0) || (index >= RSSFeedModel.shared.getItemsCount()) {
             return nil
         }
         
@@ -61,7 +61,7 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
         }
         
         index += 1
-        if index == RSSFeedModel.shared.itemsCount() {
+        if index == RSSFeedModel.shared.getItemsCount() {
             return nil
         }
         return self.viewControllerAtIndex(index, storyboard: viewController.storyboard!)
