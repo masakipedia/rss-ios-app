@@ -17,8 +17,26 @@ class RSSFeedModel {
     static var shared = RSSFeedModel()
     
     var feed: RSSFeed?
-    private(set) var allFeedsURLString: [String] = ["https://www.gizmodo.jp/index.xml", "https://www.lifehacker.jp/feed/index.xml"]
-    private(set) var allFeedsName: [String] = ["ギズモード・ジャパン", "ライフハッカー [日本版]"]
+    private(set) var allFeedsURLString: [String] = [
+        "https://www.gizmodo.jp/index.xml",
+        "https://www.lifehacker.jp/feed/index.xml",
+        "https://www.buildinsider.net/rss",
+        "https://codezine.jp/rss/new/20/index.xml",
+        "http://feed.rssad.jp/rss/gigazine/rss_2.0",
+        "http://rss.rssad.jp/rss/itmtop/1.0/topstory.xml",
+        "https://techwave.jp/rsslatest.xml",
+        "http://getnews.jp/feed/ext/orig",
+    ]
+    private(set) var allFeedsName: [String] = [
+        "ギズモード・ジャパン",
+        "ライフハッカー [日本版]",
+        "Build Insider",
+        "CodeZine",
+        "GIGAZINE",
+        "IT総合情報ポータル「ITmedia」",
+        "TechWave（テックウェーブ） #WAVE",
+        "ガジェット通信", 
+    ]
     private(set) var url: URL!
 }
 
@@ -43,6 +61,12 @@ extension RSSFeedModel {
                 tableView.reloadData()
             }
         }
+    }
+    
+    
+    func loadRssFeedTitle(url: URL) -> String{
+        let parser = FeedParser(URL: url)!
+        return parser.parse().rssFeed?.title ?? "[no title]"
     }
 
 }
@@ -87,6 +111,37 @@ extension RSSFeedModel {
         return URL(string: "https://www.google.com/s2/favicons?domain=" + splitURL[0] + "//" + splitURL[1])!
     }
     
+    
+    
+    
 }
 
+
+// MARK: - I disabled ATS. So, i did comment out.
+
+extension RSSFeedModel {
+
+
+//    /// rss feed setter
+//    /// feed url must be ATS(https)
+//    ///
+//    /// - Parameter stringURL: rss feed url (https)
+//    /// - Returns: Whether it succeeded or not
+//    func setFeedURL(stringURL: String) -> Bool {
+//
+//        let isATS = { (_ stringURL: String) -> Bool in
+//            let strSplited = stringURL.split(separator: "/")
+//            return "https:" == strSplited[0]
+//        }
+//
+//        guard isATS(stringURL) else {
+//            return false
+//        }
+//
+//        allFeedsURLString.append(stringURL)
+//        allFeedsName.append(loadRssFeedTitle(url: URL(string: stringURL)!))
+//        return true
+//    }
+
+}
 
