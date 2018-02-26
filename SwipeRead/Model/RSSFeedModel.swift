@@ -115,6 +115,13 @@ extension RSSFeedModel {
         return URL(string: "https://www.google.com/s2/favicons?domain=" + splitURL[0] + "//" + splitURL[1])!
     }
     
+    func getImageURLFromString(str: String) -> String {
+        if let range = str.range(of: "src=\"") {
+            let imgTagFirstToEnd = str.suffix(str.count - range.upperBound.encodedOffset)
+            return String(imgTagFirstToEnd[imgTagFirstToEnd.startIndex..<imgTagFirstToEnd.index(of: "\"")!])
+        }
+        return ""
+    }
 }
 
 

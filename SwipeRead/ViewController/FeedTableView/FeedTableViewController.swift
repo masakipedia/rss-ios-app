@@ -43,6 +43,11 @@ class FeedTableViewController: UITableViewController {
         if headerImageURLString == "" {
             headerImageURLString = RSSFeedModel.shared.feed?.items?.first?.enclosure?.attributes?.url ?? ""
         }
+        if headerImageURLString == "" {
+            if let str = RSSFeedModel.shared.feed?.items?.first?.content?.contentEncoded {
+                headerImageURLString = RSSFeedModel.shared.getImageURLFromString(str: str)
+            }
+        }
         
         // header image setting
         configureImage(imageView: headerView.headerImageView, URLString: headerImageURLString, placeholderImage: UIImage(named: "placeholder")!)
@@ -86,6 +91,12 @@ extension FeedTableViewController {
             cell.titleLabel.text = item.title ?? "[no title]"
             
             urlString = item.enclosure?.attributes?.url ?? ""
+            
+            if urlString == "" {
+                if let str = item.content?.contentEncoded {
+                    urlString = RSSFeedModel.shared.getImageURLFromString(str: str)
+                }
+            }
             if urlString == "" {
                 urlString = RSSFeedModel.shared.feed?.image?.url ?? ""
             }
@@ -159,7 +170,7 @@ extension FeedTableViewController {
         imageView.af_setImage(
             withURL: url,
             placeholderImage: placeholderImage,
-            filter: AspectScaledToFillSizeWithRoundedCornersFilter(size: size, radius: 0),
+            filter: AspectScaledToFillSizeWithRoundedCornersFilter(size: size, radius: size.height * 0.15),
             imageTransition: .crossDissolve(0.2)
         )
     }
