@@ -39,13 +39,15 @@ class FeedTableViewController: UITableViewController {
         headerView.title.text = title
         self.navigationItem.title = title
         
-        if let urlString = RSSFeedModel.shared.feed?.items?.first?.enclosure?.attributes?.url {
-            
-            // header image setting
-            configureImage(imageView: headerView.headerImageView, URLString: urlString, placeholderImage: UIImage(named: "placeholder")!)
-            
+        var headerImageURLString = RSSFeedModel.shared.feed?.image?.url ?? ""
+        if headerImageURLString == "" {
+            headerImageURLString = RSSFeedModel.shared.feed?.items?.first?.enclosure?.attributes?.url ?? ""
         }
         
+        // header image setting
+        configureImage(imageView: headerView.headerImageView, URLString: headerImageURLString, placeholderImage: UIImage(named: "placeholder")!)
+            
+        // favicon image settiong
         configureImage(imageView: headerView.faviconImageView, URLString: RSSFeedModel.shared.getFaviconURL().absoluteString, placeholderImage: UIImage(named: "placeholder")!)
         
         
@@ -80,7 +82,11 @@ extension FeedTableViewController {
         cell.selectionStyle = UITableViewCellSelectionStyle.gray
         cell.titleLabel.text = RSSFeedModel.shared.feed?.items?[indexPath.row].title ?? "[no title]"
         
-        let urlString = RSSFeedModel.shared.feed?.items?[indexPath.row].enclosure?.attributes?.url ?? ""
+        var urlString = RSSFeedModel.shared.feed?.items?[indexPath.row].enclosure?.attributes?.url ?? ""
+        
+        if urlString == "" {
+            urlString = RSSFeedModel.shared.feed?.image?.url ?? ""
+        }
         
         // cell image setting
         configureImage(imageView: cell.feedImageView, URLString: urlString, placeholderImage: UIImage(named: "placeholder")!)

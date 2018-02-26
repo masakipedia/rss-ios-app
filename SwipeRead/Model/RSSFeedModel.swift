@@ -35,7 +35,7 @@ class RSSFeedModel {
         "GIGAZINE",
         "IT総合情報ポータル「ITmedia」",
         "TechWave（テックウェーブ） #WAVE",
-        "ガジェット通信", 
+        "ガジェット通信",
     ]
     private(set) var url: URL!
 }
