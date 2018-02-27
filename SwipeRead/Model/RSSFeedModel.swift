@@ -28,6 +28,7 @@ class RSSFeedModel {
         "https://rss.allabout.co.jp/aa/latest/",
         "https://techable.jp/feed",
         "https://liginc.co.jp/feed",
+        "view-source:https://www.hackingwithswift.com/articles/rss",
     ]
     private(set) var allFeedsName: [String] = [
         "HuffPost Japan",
@@ -39,7 +40,8 @@ class RSSFeedModel {
         "ガジェット通信",
         "All About（オールアバウト）",
         "Techable（テッカブル）",
-        "株式会社LIG", 
+        "株式会社LIG",
+        "HACKING WITH SWIFT",
     ]
     private(set) var url: URL!
 }

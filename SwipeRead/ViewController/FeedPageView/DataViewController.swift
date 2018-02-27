@@ -7,14 +7,12 @@
 //
 
 import UIKit
+import WebKit
 
 class DataViewController: UIViewController {
     
     var index: Int!
-    
-    @IBOutlet weak var feedTitle: UILabel!
-    @IBOutlet weak var feedDescription: UITextView!
-    
+    @IBOutlet weak var webView: WKWebView!
     
     override func loadView() {
         // load xib file
@@ -23,10 +21,30 @@ class DataViewController: UIViewController {
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        feedTitle.text = RSSFeedModel.shared.feed?.items?[index].title ?? "[no title]"
-        feedDescription.text = RSSFeedModel.shared.feed?.items?[index].description ?? "[no description]"
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        initWKWebView()
+    }
+    
+    func initWKWebView() {
+        
+        // Refresh Control setting
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(self.refreshWebView), for: UIControlEvents.valueChanged)
+        webView.scrollView.addSubview(refreshControl)
+        
+        // title and description setting
+        let title = RSSFeedModel.shared.feed?.items?[index].title ?? ""
+        let description = RSSFeedModel.shared.feed?.items?[index].description ?? ""
+        let html = "<h1>" + title + "</h1>" + description
+        webView.loadHTMLString(html, baseURL: nil)
+        
+    }
+    
+    @objc func refreshWebView(sender: UIRefreshControl) {
+        webView.load(URLRequest(url: URL(string: RSSFeedModel.shared.feed?.items?[index].link ?? "")!))
+        sender.endRefreshing()
     }
     
 }
