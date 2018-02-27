@@ -32,7 +32,19 @@ class FeedTableViewController: UITableViewController {
         initHeaderView()
         initTableView()
         RSSFeedModel.shared.loadRssFeed(tableView: self.tableView)
+        
+        // Refresh Control setting
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(self.refreshtableView), for: UIControlEvents.valueChanged)
+        tableView.addSubview(refreshControl)
+        
     }
+    
+    @objc func refreshtableView(sender: UIRefreshControl) {
+        RSSFeedModel.shared.loadRssFeed(tableView: self.tableView)
+        sender.endRefreshing()
+    }
+    
     
     override func viewDidLayoutSubviews() {
         let title = RSSFeedModel.shared.feed?.title ?? "[no title]"
