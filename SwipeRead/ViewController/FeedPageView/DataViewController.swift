@@ -75,8 +75,9 @@ extension DataViewController {
         if let item = RSSFeedModel.shared.feed?.items?[index] {
             // headr view setting
             titleLabel.text = item.title ?? ""
-            timeLabel.text = String(describing: item.pubDate ?? Date())
-            
+            let dateStr: String = String(describing: item.pubDate ?? Date())
+            timeLabel.text = String(dateStr.prefix(10))
+        
             // html and image setting
             var html = ""
             let desc = item.description ?? ""
