@@ -15,6 +15,7 @@ class DataViewController: UIViewController {
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var headerView: UIView!
     
     override func loadView() {
         // load xib file
@@ -27,7 +28,15 @@ class DataViewController: UIViewController {
         super.viewDidLoad()
         
         initWKWebView()
+        initContent()
     }
+    
+}
+
+
+// MARK: - initialyze WKWebView
+
+extension DataViewController {
     
     func initWKWebView() {
         
@@ -36,18 +45,37 @@ class DataViewController: UIViewController {
         refreshControl.addTarget(self, action: #selector(self.refreshWebView), for: UIControlEvents.valueChanged)
         webView.scrollView.addSubview(refreshControl)
         
-        // content setting
-        titleLabel.text = RSSFeedModel.shared.feed?.items?[index].title ?? ""
-        timeLabel.text = String(describing: RSSFeedModel.shared.feed?.items?[index].pubDate ?? Date())
-        webView.loadHTMLString(RSSFeedModel.shared.feed?.items?[index].description ?? "", baseURL: nil)
-        
     }
     
     @objc func refreshWebView(sender: UIRefreshControl) {
         webView.load(URLRequest(url: URL(string: RSSFeedModel.shared.feed?.items?[index].link ?? "")!))
         sender.endRefreshing()
+        
+        removeHeaderView()
+    }
+    
+    func removeHeaderView() {
+        timeLabel.alpha = 0
+        titleLabel.alpha = 0
+        headerView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 0)
+        webView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
     }
     
 }
 
 
+// MARK: - initialyze Content
+
+extension DataViewController {
+    
+    func initContent() {
+        
+        // content setting
+        titleLabel.text = RSSFeedModel.shared.feed?.items?[index].title ?? ""
+        timeLabel.text = String(describing: RSSFeedModel.shared.feed?.items?[index].pubDate ?? Date())
+        let html = "<font size=\"25px\">" + (RSSFeedModel.shared.feed?.items?[index].description ?? "") + "</font>"
+        webView.loadHTMLString(html, baseURL: nil)
+        
+    }
+    
+}
