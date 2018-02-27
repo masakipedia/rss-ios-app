@@ -21,7 +21,7 @@
                     <rect key="frame" x="-0.5" y="-0.5" width="375" height="667"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Header View" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="92W-eJ-Fcx">
-                    <rect key="frame" x="-0.5" y="607" width="375" height="45"/>
+                    <rect key="frame" x="-0.5" y="610" width="375" height="45"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="45" id="qYb-XU-gvf"/>
                     </constraints>
@@ -30,7 +30,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TqV-XF-fag">
-                    <rect key="frame" x="172" y="577" width="30" height="30"/>
+                    <rect key="frame" x="172" y="580" width="30" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="TqV-XF-fag" secondAttribute="height" multiplier="1:1" id="2aY-nd-Kf3"/>
                         <constraint firstAttribute="height" constant="30" id="zdm-E2-erW"/>
@@ -38,7 +38,7 @@
                 </imageView>
             </subviews>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="92W-eJ-Fcx" secondAttribute="bottom" constant="15" id="0bY-gs-ox3"/>
+                <constraint firstAttribute="bottom" secondItem="92W-eJ-Fcx" secondAttribute="bottom" constant="12" id="0bY-gs-ox3"/>
                 <constraint firstItem="92W-eJ-Fcx" firstAttribute="centerX" secondItem="lxU-he-hBf" secondAttribute="centerX" id="491-35-XcJ"/>
                 <constraint firstItem="F5A-Ew-dfk" firstAttribute="height" secondItem="lxU-he-hBf" secondAttribute="height" id="9hm-I8-NxB"/>
                 <constraint firstItem="F5A-Ew-dfk" firstAttribute="centerY" secondItem="lxU-he-hBf" secondAttribute="centerY" id="KZo-D5-trs"/>

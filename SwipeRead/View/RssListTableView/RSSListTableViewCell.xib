@@ -6,37 +6,51 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RSSListTableViewCell" customModule="SwipeRead" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="RSSListTableViewCell" customModule="SwipeRead" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="57" id="KGk-i7-Jjw" customClass="RSSListTableViewCell" customModule="SwipeRead" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="57"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="56.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EWx-Fn-vds">
-                        <rect key="frame" x="16" y="8" width="27" height="27"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EWx-Fn-vds">
+                        <rect key="frame" x="15" y="14.5" width="28.5" height="28.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="EWx-Fn-vds" secondAttribute="height" multiplier="1:1" id="gmH-CW-xVt"/>
+                        </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uly-pi-Hkn">
-                        <rect key="frame" x="55" y="8" width="249" height="27"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uly-pi-Hkn">
+                        <rect key="frame" x="53.5" y="18.5" width="256.5" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="Uly-pi-Hkn" firstAttribute="centerY" secondItem="EWx-Fn-vds" secondAttribute="centerY" id="MJh-ta-imc"/>
+                    <constraint firstItem="Uly-pi-Hkn" firstAttribute="leading" secondItem="EWx-Fn-vds" secondAttribute="trailing" constant="10" id="Wi2-XO-YxX"/>
+                </constraints>
             </tableViewCellContentView>
+            <constraints>
+                <constraint firstItem="EWx-Fn-vds" firstAttribute="leading" secondItem="KGk-i7-Jjw" secondAttribute="leading" constant="15" id="YJv-dB-TxW"/>
+                <constraint firstAttribute="trailing" secondItem="Uly-pi-Hkn" secondAttribute="trailing" constant="10" id="ac4-2P-wbG"/>
+                <constraint firstItem="EWx-Fn-vds" firstAttribute="centerY" secondItem="KGk-i7-Jjw" secondAttribute="centerY" id="m2E-8v-6Y7"/>
+                <constraint firstItem="EWx-Fn-vds" firstAttribute="height" secondItem="KGk-i7-Jjw" secondAttribute="height" multiplier="0.5" id="yiF-oO-h2r"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="faviconImageView" destination="EWx-Fn-vds" id="8Nm-jJ-Bk7"/>
                 <outlet property="titleLabel" destination="Uly-pi-Hkn" id="yjA-oJ-1Cv"/>
             </connections>
+            <point key="canvasLocation" x="64" y="92.5"/>
         </tableViewCell>
     </objects>
 </document>
