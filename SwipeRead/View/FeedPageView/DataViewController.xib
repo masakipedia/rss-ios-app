@@ -12,6 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DataViewController" customModule="SwipeRead" customModuleProvider="target">
             <connections>
+                <outlet property="timeLabel" destination="XvY-if-REn" id="AgO-Ch-24j"/>
+                <outlet property="titleLabel" destination="4od-rS-LkK" id="Pt8-Rc-GYL"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="webView" destination="4Hu-6Z-goO" id="4Is-fc-4Ba"/>
             </connections>
@@ -22,20 +24,37 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Hu-6Z-goO">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <rect key="frame" x="0.0" y="65" width="375" height="602"/>
                     <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <wkWebViewConfiguration key="configuration">
                         <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                         <wkPreferences key="preferences"/>
                     </wkWebViewConfiguration>
                 </wkWebView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4od-rS-LkK">
+                    <rect key="frame" x="0.0" y="20" width="375" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XvY-if-REn">
+                    <rect key="frame" x="0.0" y="44" width="375" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="4Hu-6Z-goO" secondAttribute="bottom" id="8hB-hT-bKS"/>
+                <constraint firstItem="XvY-if-REn" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="B8z-7D-KIA"/>
+                <constraint firstItem="4Hu-6Z-goO" firstAttribute="top" secondItem="XvY-if-REn" secondAttribute="bottom" id="Exj-GN-5HE"/>
                 <constraint firstItem="4Hu-6Z-goO" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="IRv-fT-Cow"/>
                 <constraint firstItem="4Hu-6Z-goO" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="Ksq-qU-Aez"/>
-                <constraint firstItem="4Hu-6Z-goO" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="i4c-RY-csK"/>
+                <constraint firstItem="XvY-if-REn" firstAttribute="top" secondItem="4od-rS-LkK" secondAttribute="bottom" id="Rmt-PD-sIo"/>
+                <constraint firstItem="4od-rS-LkK" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="bqa-Ye-Jjb"/>
+                <constraint firstItem="4od-rS-LkK" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="oVr-KU-7vl"/>
+                <constraint firstItem="4od-rS-LkK" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ysT-f8-nS6"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="33.5" y="54.5"/>

@@ -13,6 +13,8 @@ class DataViewController: UIViewController {
     
     var index: Int!
     @IBOutlet weak var webView: WKWebView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
     
     override func loadView() {
         // load xib file
@@ -34,11 +36,10 @@ class DataViewController: UIViewController {
         refreshControl.addTarget(self, action: #selector(self.refreshWebView), for: UIControlEvents.valueChanged)
         webView.scrollView.addSubview(refreshControl)
         
-        // title and description setting
-        let title = RSSFeedModel.shared.feed?.items?[index].title ?? ""
-        let description = RSSFeedModel.shared.feed?.items?[index].description ?? ""
-        let html = "<h1>" + title + "</h1>" + description
-        webView.loadHTMLString(html, baseURL: nil)
+        // content setting
+        titleLabel.text = RSSFeedModel.shared.feed?.items?[index].title ?? ""
+        timeLabel.text = String(describing: RSSFeedModel.shared.feed?.items?[index].pubDate ?? Date())
+        webView.loadHTMLString(RSSFeedModel.shared.feed?.items?[index].description ?? "", baseURL: nil)
         
     }
     
