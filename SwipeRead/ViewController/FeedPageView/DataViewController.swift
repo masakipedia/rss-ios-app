@@ -70,11 +70,33 @@ extension DataViewController {
     
     func initContent() {
         
-        // content setting
-        titleLabel.text = RSSFeedModel.shared.feed?.items?[index].title ?? ""
-        timeLabel.text = String(describing: RSSFeedModel.shared.feed?.items?[index].pubDate ?? Date())
-        let html = "<font size=\"25px\">" + (RSSFeedModel.shared.feed?.items?[index].description ?? "") + "</font>"
-        webView.loadHTMLString(html, baseURL: nil)
+        let htmlParser = HtmlParser()
+        
+        if let item = RSSFeedModel.shared.feed?.items?[index] {
+            // headr view setting
+            titleLabel.text = item.title ?? ""
+            timeLabel.text = String(describing: item.pubDate ?? Date())
+            
+            // html and image setting
+            var html = ""
+            let desc = item.description ?? ""
+            let (insertedDesc, isExist) = htmlParser.insertImgWidth(str: desc)
+            if !isExist {
+                var imgURLString: String
+                imgURLString = item.enclosure?.attributes?.url ?? ""
+                if imgURLString == "" {
+                    if let str = item.content?.contentEncoded {
+                        imgURLString = htmlParser.getImageURLFromString(str: str)
+                    }
+                }
+                html += "<img src=\"\(imgURLString)\" width=\"100%\">"
+            }
+            let divStyle = "style=\"margin: 0% 2%;\""
+            let fontStyle = "style=\"font-size: 5vw; font-family: sans-serif;\""
+            html += "<div " + divStyle + " >" + "<font " + fontStyle + " >" + insertedDesc + "</font></div>"
+            
+            webView.loadHTMLString(html, baseURL: nil)
+        }
         
     }
     

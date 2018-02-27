@@ -13,6 +13,7 @@ class FeedTableViewController: UITableViewController {
     
     var headerView: FeedTableViewHeader!
     let downloader = ImageDownloader()
+    let htmlParser = HtmlParser()
     
     override func loadView() {
         // load xib file
@@ -44,17 +45,17 @@ class FeedTableViewController: UITableViewController {
         }
         if headerImageURLString == "" {
             if let str = RSSFeedModel.shared.feed?.items?.first?.content?.contentEncoded {
-                headerImageURLString = getImageURLFromString(str: str)
+                headerImageURLString = HtmlParser().getImageURLFromString(str: str)
             }
         }
         
         // header image setting
-        configureImage(imageView: headerView.headerImageView, URLString: headerImageURLString, placeholderImage: UIImage(named: "placeholder")!)
+        configureImage(imageView: headerView.headerImageView, URLString: headerImageURLString, radius: 0)
             
         // favicon image settiong
         configureImage(imageView: headerView.faviconImageView,
                        URLString: RSSFeedModel.shared.getFaviconURL(stringURL: RSSFeedModel.shared.url.absoluteString).absoluteString,
-                       placeholderImage: UIImage(named: "placeholder")!)
+                       radius: headerView.faviconImageView.frame.height * 0.1)
         
         
     }
@@ -94,11 +95,11 @@ extension FeedTableViewController {
             urlString = item.enclosure?.attributes?.url ?? ""
             if urlString == "" {
                 if let str = item.content?.contentEncoded {
-                    urlString = getImageURLFromString(str: str)
+                    urlString = htmlParser.getImageURLFromString(str: str)
                 }
             }
             if urlString == "" {
-                urlString = getImageURLFromString(str: item.description ?? "")
+                urlString = htmlParser.getImageURLFromString(str: item.description ?? "")
             }
             if urlString == "" {
                 urlString = RSSFeedModel.shared.feed?.image?.url ?? ""
@@ -106,7 +107,9 @@ extension FeedTableViewController {
         }
         
         // cell image setting
-        configureImage(imageView: cell.feedImageView, URLString: urlString, placeholderImage: UIImage(named: "placeholder")!)
+        configureImage(imageView: cell.feedImageView,
+                       URLString: urlString,
+                       radius: cell.feedImageView.frame.height * 0.15)
         
         return cell
     }
@@ -162,30 +165,22 @@ extension FeedTableViewController {
 
 extension FeedTableViewController {
     
-    func configureImage(imageView: UIImageView, URLString: String, placeholderImage: UIImage) {
+    func configureImage(imageView: UIImageView, URLString: String, radius: CGFloat) {
         let size = imageView.frame.size
+        let placeholder = UIImage(named: "placeholder")
         
         guard let url = URL(string: URLString) else {
-            imageView.image = placeholderImage
+            imageView.image = placeholder
             return
         }
         
         imageView.af_setImage(
             withURL: url,
-            placeholderImage: placeholderImage,
-            filter: AspectScaledToFillSizeWithRoundedCornersFilter(size: size, radius: size.height * 0.15),
+            placeholderImage: placeholder,
+            filter: AspectScaledToFillSizeWithRoundedCornersFilter(size: size, radius: radius),
             imageTransition: .crossDissolve(0.2)
         )
     }
     
-    
-    func getImageURLFromString(str: String) -> String {
-        if let range = str.range(of: "src=\"") {
-            var src = str[range.upperBound..<str.endIndex]
-            src = src[src.startIndex..<src.index(of: "\"")!]
-            return String(src)
-        }
-        return ""
-    }
 }
 
